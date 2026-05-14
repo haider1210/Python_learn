@@ -2,6 +2,9 @@
 # Python Requests API Example Explanation
 
 This Python script uses the `requests` library to fetch user data from a REST API and save the response into a JSON file.
+````
+
+```python
 import requests
 
 url = 'https://fake-json-api.mock.beeceptor.com/users'
@@ -19,12 +22,6 @@ for index ,i  in enumerate(res.json(),start=1):
      pass
 with open('index.json','w') as f:
     f.write(res.text)
-
-
-
-
-```python
-import requests
 ````
 
 The `requests` module is imported to send HTTP requests like GET, POST, PUT, and DELETE in Python.
