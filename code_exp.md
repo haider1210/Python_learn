@@ -2,6 +2,26 @@
 # Python Requests API Example Explanation
 
 This Python script uses the `requests` library to fetch user data from a REST API and save the response into a JSON file.
+import requests
+
+url = 'https://fake-json-api.mock.beeceptor.com/users'
+res = requests.get(url)
+
+print(res.headers['Content-Type'])
+print(res.headers)
+if res.status_code != 200:
+    raise Exception('API call failed with status code: {}'.format(res.status_code))
+# print(type(res.text))
+# print(type(res.json()))
+# print(res.json())
+for index ,i  in enumerate(res.json(),start=1):
+    # print(f"{index} : {i['name']}")
+     pass
+with open('index.json','w') as f:
+    f.write(res.text)
+
+
+
 
 ```python
 import requests
