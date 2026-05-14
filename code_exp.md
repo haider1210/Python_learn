@@ -8,7 +8,11 @@ This Python script uses the `requests` library to fetch user data from a REST AP
 import requests
 
 url = 'https://fake-json-api.mock.beeceptor.com/users'
-res = requests.get(url)
+# res = requests.get(url)
+
+params = {'page': 1, 'limit': 10 }  #should be dictionary
+
+res = requests.get(url,params=params ) #url + '?page=1&limit=10'
 
 print(res.headers['Content-Type'])
 print(res.headers)
